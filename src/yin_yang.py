@@ -20,7 +20,7 @@ import threading
 import time
 
 from src import config
-from src.plugins import kde, gtkkde, wallpaper, vscode, atom, gtk, firefox, gnome, kvantum
+from src.plugins import kde, gtkkde, wallpaper, vscode, atom, gtk, firefox, gnome, kvantum, spotify
 
 # aliases for path to use later on
 user = pwd.getpwuid(os.getuid())[0]
@@ -58,6 +58,11 @@ class Yang(threading.Thread):
         # kvantum support
         if config.get("kvantumEnabled"):
             kvantum.switch_to_light()
+
+        # spotify support
+        if config.get("spotifyEnabled"):
+            spotify.switch_to_light()
+        
         play_sound("./assets/light.wav")
 
 
@@ -90,6 +95,11 @@ class Yin(threading.Thread):
         # kvantum support
         if config.get("kvantumEnabled"):
             kvantum.switch_to_dark()
+            
+        # spotify support
+        if config.get("spotifyEnabled"):
+            spotify.switch_to_dark()
+            
         play_sound("./assets/dark.wav")
 
 

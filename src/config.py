@@ -104,6 +104,9 @@ config["gnomeDarkTheme"] = ""
 config["kvantumEnabled"] = False
 config["kvantumLightTheme"] = ""
 config["kvantumDarkTheme"] = ""
+config["spotifyEnabled"] = False
+config["spotifyLightTheme"] = ""
+config["spotifyDarkTheme"] = ""
 config["soundEnabled"] = True
 
 if exists():
